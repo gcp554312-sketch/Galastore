@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oto Galeri | Cyberpunk Edition</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+        body { font-family: 'Orbitron', sans-serif; background-color: #0a0b10; color: white; }
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .neon-cyan { box-shadow: 0 0 10px #00f2ff; }
+        .neon-purple { box-shadow: 0 0 10px #bc13fe; }
+        .animate-pulse-glow { animation: pulse 2s infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+    </style>
+</head>
+<body class="p-4 md:p-8">
+
+    <!-- Instagram Vitrini -->
+    <section class="mb-12">
+        <h2 class="text-2xl text-[#bc13fe] mb-6 uppercase tracking-widest">Ahmet’in Seçimi</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="glass p-3 rounded-xl border-t-2 border-[#bc13fe] hover:scale-105 transition-all">
+                <div class="h-40 bg-gray-800 rounded-lg mb-4 bg-[url('https://source.unsplash.com/random/400x300/?car')] bg-cover"></div>
+                <div class="flex justify-between items-center px-2">
+                    <span class="text-xs text-gray-400">@cpm_garage</span>
+                    <button class="bg-[#bc13fe] px-4 py-1 rounded-full text-[10px] shadow-neon-purple hover:bg-white hover:text-[#bc13fe]">DM</button>
+                </div>
+            </div>
+            <!-- Diğerleri aynı mantıkla çoğaltılabilir -->
+        </div>
+    </section>
+
+    <!-- Ana Panel -->
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+        <aside class="lg:col-span-1 glass p-6 rounded-2xl h-fit">
+            <h3 class="text-lg text-[#00f2ff] mb-4">Filtreleme</h3>
+            <div class="space-y-6">
+                <input type="range" class="w-full accent-[#00f2ff]">
+                <div class="flex items-center gap-3 text-xs"><input type="checkbox" class="accent-[#00f2ff]"> W16 Motor</div>
+                <div class="flex items-center gap-3 text-xs"><input type="checkbox" class="accent-[#00f2ff]"> Chrome</div>
+            </div>
+        </aside>
+
+        <main class="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- İlan Kartı -->
+            <div class="glass p-6 rounded-2xl relative border border-white/10 hover:border-[#00f2ff] transition-all">
+                <!-- Canlı Sayaç -->
+                <div class="absolute top-2 left-4 text-[8px] text-[#00f2ff] animate-pulse-glow flex items-center gap-1">
+                    <div class="w-1.5 h-1.5 bg-[#00f2ff] rounded-full"></div> 14 KİŞİ İNCELİYOR
+                </div>
+
+                <span class="absolute top-4 right-4 text-[9px] text-[#00f2ff] border border-[#00f2ff] px-2 py-0.5 rounded-full neon-cyan">MÜSAİT</span>
+                <h3 class="text-xl font-bold mt-4">Nissan Skyline R34</h3>
+                <p class="text-gray-500 text-xs mb-4">1695 HP | Chrome | Bodykit</p>
+                
+                <!-- Etiketler -->
+                <div class="flex gap-2 mb-4">
+                    <span class="text-[8px] border border-[#bc13fe] text-[#bc13fe] px-2 py-0.5 rounded">PAZARLIK VAR</span>
+                    <span class="text-[8px] border border-green-500 text-green-500 px-2 py-0.5 rounded">GÜVENLİ</span>
+                </div>
+
+                <button class="w-full py-3 bg-[#00f2ff]/10 border border-[#00f2ff] text-[#00f2ff] uppercase text-xs rounded-lg hover:bg-[#00f2ff] hover:text-black transition-all">
+                    Takas Teklifi Oluştur
+                </button>
+                
+                <!-- Yorum Alanı -->
+                <div class="mt-4 pt-4 border-t border-white/5">
+                    <button class="text-[10px] text-gray-400 hover:text-white transition-all underline">Yorumları Görüntüle (12)</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Bildirim Sistemi Örneği
+        function showNotification() {
+            alert("Teklifiniz başarıyla iletildi! Bildirimler aktif.");
+        }
+    </script>
+</body>
+</html>
